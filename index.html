@@ -544,6 +544,344 @@
     .proof-item b{color:var(--navy);line-height:1.1}
     .proof-item small{color:var(--muted);font-size:.82rem;line-height:1.25}
 
+    .experience-card{padding:28px;overflow:hidden;background:linear-gradient(180deg,#fff,#f8fbfd)}
+    .score-hero{
+      display:grid;
+      grid-template-columns:minmax(280px,.82fr) minmax(0,1.18fr);
+      gap:22px;
+      align-items:stretch;
+      margin-bottom:20px;
+    }
+    .score-thesis{
+      min-height:280px;
+      padding:28px;
+      border-radius:22px;
+      color:#fff;
+      background:linear-gradient(145deg,var(--navy),#0b3d74 58%,#087e86);
+      box-shadow:0 18px 38px rgba(9,40,93,.18);
+      display:grid;
+      align-content:space-between;
+      gap:24px;
+      overflow:hidden;
+      position:relative;
+    }
+    .score-thesis::after{
+      content:"";
+      position:absolute;
+      inset:auto -12% -36% auto;
+      width:58%;
+      aspect-ratio:1;
+      border:1px solid rgba(255,255,255,.18);
+      transform:rotate(18deg);
+    }
+    .score-thesis .mini-label{position:relative;z-index:1;color:#9ee4e9}
+    .score-thesis h3{position:relative;z-index:1;margin:8px 0 12px;font-size:clamp(1.9rem,3vw,2.7rem);line-height:1;letter-spacing:-.05em}
+    .score-thesis p{position:relative;z-index:1;margin:0;color:rgba(255,255,255,.88);font-size:1.04rem}
+    .score-pulse{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .pulse-item{padding:12px;border:1px solid rgba(255,255,255,.18);border-radius:16px;background:rgba(255,255,255,.08);display:grid;gap:6px}
+    .pulse-item span{width:30px;height:30px;border-radius:999px;background:rgba(255,255,255,.16);display:grid;place-items:center;font-weight:950;font-size:.78rem}
+    .pulse-item b{line-height:1.08}
+    .score-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-content:stretch}
+    .legend-card{
+      min-height:132px;
+      padding:18px;
+      border:1px solid rgba(217,225,235,.95);
+      border-top:5px solid var(--navy);
+      border-radius:20px;
+      background:#fff;
+      box-shadow:0 12px 28px rgba(9,40,93,.07);
+      display:grid;
+      gap:8px;
+      align-content:start;
+    }
+    .legend-card:nth-child(2){border-top-color:var(--teal);background:linear-gradient(180deg,#fff,#f1fbfc)}
+    .legend-card:nth-child(3){border-top-color:var(--gold);background:linear-gradient(180deg,#fff,#fffaf0)}
+    .legend-card:nth-child(4){border-top-color:#97a4b6}
+    .legend-card span{color:var(--gold);font-weight:950;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+    .legend-card b{color:var(--navy);line-height:1.1}
+    .legend-card small{color:var(--muted);font-size:.86rem;line-height:1.3}
+    .score-live{
+      margin:0 0 14px;
+      display:grid;
+      grid-template-columns:minmax(280px,.82fr) minmax(0,1.18fr);
+      gap:14px;
+      align-items:stretch;
+    }
+    .live-core{
+      min-height:210px;
+      padding:22px;
+      border-radius:22px;
+      background:linear-gradient(145deg,#10233f,var(--navy));
+      color:#fff;
+      box-shadow:0 16px 34px rgba(9,40,93,.16);
+      display:grid;
+      align-content:space-between;
+      gap:18px;
+      overflow:hidden;
+      position:relative;
+    }
+    .live-core::after{
+      content:"";
+      position:absolute;
+      inset:auto 22px 22px auto;
+      width:38%;
+      aspect-ratio:1;
+      border:1px solid rgba(255,255,255,.14);
+      transform:rotate(18deg);
+    }
+    .live-kicker{position:relative;z-index:1;color:#9ee4e9;font-weight:950;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em}
+    .live-core h3{position:relative;z-index:1;margin:8px 0 8px;font-size:clamp(1.45rem,2.2vw,2rem);line-height:1;letter-spacing:-.04em}
+    .live-core p{position:relative;z-index:1;margin:0;color:rgba(255,255,255,.84)}
+    .live-meter{position:relative;z-index:1;display:grid;gap:8px}
+    .live-meter-track{height:10px;border-radius:999px;background:rgba(255,255,255,.14);overflow:hidden}
+    .live-meter-fill{display:block;width:12.5%;height:100%;border-radius:999px;background:linear-gradient(90deg,#9ee4e9,#ffd56b);transition:width .38s ease}
+    .live-meter-row{display:flex;justify-content:space-between;gap:12px;color:rgba(255,255,255,.72);font-weight:850;font-size:.78rem}
+    .runtime-loop{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px;
+      padding:16px;
+      border:1px solid rgba(217,225,235,.95);
+      border-radius:22px;
+      background:#fff;
+      box-shadow:0 12px 28px rgba(9,40,93,.07);
+    }
+    .runtime-step{
+      min-height:166px;
+      padding:15px;
+      border:1px solid rgba(9,40,93,.12);
+      border-radius:18px;
+      background:linear-gradient(180deg,#fff,#f8fbfd);
+      display:grid;
+      gap:8px;
+      align-content:start;
+      position:relative;
+      overflow:hidden;
+    }
+    .runtime-step::before{
+      content:"";
+      width:34px;
+      height:34px;
+      border-radius:999px;
+      background:var(--navy);
+      box-shadow:0 8px 18px rgba(9,40,93,.14);
+    }
+    .runtime-step.is-live{border-color:rgba(8,126,134,.38);background:#eefafb}
+    .runtime-step.is-live::before{background:var(--teal);animation:liveBeat 1.35s ease-in-out infinite}
+    .runtime-step.is-gold{border-color:rgba(200,148,19,.38);background:#fffaf0}
+    .runtime-step.is-gold::before{background:var(--gold)}
+    .runtime-step b{color:var(--navy);line-height:1.1}
+    .runtime-step small{color:var(--muted);font-size:.82rem;line-height:1.28}
+    @keyframes liveBeat{
+      0%,100%{box-shadow:0 0 0 0 rgba(8,126,134,.22),0 8px 18px rgba(9,40,93,.12)}
+      50%{box-shadow:0 0 0 10px rgba(8,126,134,.08),0 12px 22px rgba(9,40,93,.16)}
+    }
+    .experience-score{
+      position:relative;
+      min-height:790px;
+      margin:22px 0 8px;
+      border:1px solid rgba(217,225,235,.95);
+      border-radius:28px;
+      background:
+        linear-gradient(116deg,rgba(238,250,251,.96),rgba(255,255,255,.88) 38%,rgba(255,250,240,.76)),
+        linear-gradient(205deg,rgba(9,40,93,.08),transparent 46%,rgba(8,126,134,.08)),
+        #fff;
+      overflow:hidden;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.72);
+    }
+    .experience-score::before{
+      content:"";
+      position:absolute;
+      inset:34px;
+      border:1px solid rgba(8,126,134,.12);
+      border-radius:44px 150px 44px 150px;
+      pointer-events:none;
+    }
+    .score-flow{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      pointer-events:none;
+      opacity:.9;
+    }
+    .score-flow path{vector-effect:non-scaling-stroke}
+    .score-flow .flow-live{
+      stroke-dasharray:14 20;
+      animation:signalFlow 3.8s linear infinite;
+    }
+    .score-flow .flow-proof{
+      stroke-dasharray:6 18;
+      animation:signalFlow 5.2s linear infinite reverse;
+    }
+    @keyframes signalFlow{to{stroke-dashoffset:-136}}
+    .field-label{
+      position:absolute;
+      z-index:1;
+      padding:.52rem .72rem;
+      border:1px solid rgba(217,225,235,.82);
+      border-radius:999px;
+      background:rgba(255,255,255,.66);
+      color:var(--navy);
+      font-weight:950;
+      font-size:.76rem;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      box-shadow:0 10px 22px rgba(9,40,93,.06);
+    }
+    .field-label.foundation{left:7%;top:8%}
+    .field-label.territory{left:54%;top:8%;color:#075f65}
+    .field-label.synthesis{right:7%;bottom:8%;color:#8a6200}
+    .field-core{
+      position:absolute;
+      left:50%;
+      top:52%;
+      width:min(270px,30%);
+      min-height:270px;
+      transform:translate(-50%,-50%);
+      z-index:1;
+      padding:28px 26px;
+      border:1px solid rgba(255,255,255,.34);
+      border-radius:999px;
+      color:#fff;
+      background:linear-gradient(145deg,var(--navy),#0b3d74 58%,#087e86);
+      box-shadow:0 18px 34px rgba(9,40,93,.18);
+      display:grid;
+      gap:6px;
+      align-content:center;
+      text-align:center;
+    }
+    .field-core span{color:#9ee4e9;font-weight:950;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}
+    .field-core b{font-size:1.18rem;line-height:1.05;letter-spacing:-.03em}
+    .field-core small{color:rgba(255,255,255,.78);line-height:1.25}
+    .field-ripple{
+      position:absolute;
+      left:50%;
+      top:52%;
+      width:440px;
+      aspect-ratio:1;
+      transform:translate(-50%,-50%);
+      border-radius:999px;
+      border:1px solid rgba(8,126,134,.18);
+      pointer-events:none;
+    }
+    .field-ripple::after{
+      content:"";
+      position:absolute;
+      inset:54px;
+      border-radius:inherit;
+      border:1px solid rgba(200,148,19,.18);
+    }
+    .semester{
+      min-width:0;
+      width:var(--w,220px);
+      position:absolute;
+      left:var(--x);
+      top:var(--y);
+      transform:translate(-50%,-50%);
+      z-index:3;
+      display:block;
+      padding:0;
+      border:0;
+      background:transparent;
+      cursor:pointer;
+      transition:transform .18s ease, opacity .18s ease, filter .18s ease;
+    }
+    .semester:focus{outline:none}
+    .semester:hover,.semester:focus-within,.semester.is-active{transform:translate(-50%,calc(-50% - 2px))}
+    .semester.is-active{z-index:7}
+    .experience-score.is-focused .semester:not(.is-active){opacity:.86;filter:saturate(.92)}
+    .sem-head{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:auto minmax(0,1fr);
+      gap:5px 9px;
+      align-items:center;
+      padding:9px 12px 9px 9px;
+      border:1px solid rgba(217,225,235,.92);
+      border-radius:999px;
+      background:rgba(255,255,255,.86);
+      box-shadow:0 14px 30px rgba(9,40,93,.1);
+      backdrop-filter:blur(10px);
+      text-align:left;
+      transition:border-color .22s ease, box-shadow .22s ease, background .22s ease;
+    }
+    .semester:hover .sem-head,.semester:focus .sem-head,.semester:focus-within .sem-head,.semester.is-active .sem-head{
+      border-color:rgba(8,126,134,.48);
+      background:rgba(255,255,255,.95);
+      box-shadow:0 20px 38px rgba(9,40,93,.15);
+    }
+    .semester.closing:hover .sem-head,.semester.closing:focus .sem-head,.semester.closing:focus-within .sem-head,.semester.closing.is-active .sem-head{border-color:rgba(200,148,19,.64)}
+    .sem-head span{width:36px;height:36px;border-radius:999px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:950;box-shadow:0 10px 22px rgba(9,40,93,.18)}
+    .semester.edi .sem-head span{background:var(--teal)}
+    .semester.closing .sem-head span{background:var(--gold)}
+    .sem-head b{color:var(--navy);font-size:.82rem;line-height:1.05}
+    .sem-head small{grid-column:2;color:var(--muted);font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+    .sem-nodes{
+      position:relative;
+      z-index:1;
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      width:calc(var(--w,220px) + 72px);
+      max-width:300px;
+      min-height:18px;
+      margin:9px 0 0 18px;
+      align-content:start;
+      transition:opacity .22s ease, transform .22s ease;
+    }
+    .experience-score.is-focused .semester:not(.is-active) .sem-nodes{opacity:.72}
+    .exp-node{
+      width:15px;
+      height:15px;
+      min-height:0;
+      padding:0;
+      overflow:hidden;
+      border:1px solid rgba(9,40,93,.16);
+      border-radius:999px;
+      background:rgba(255,255,255,.9);
+      color:var(--navy);
+      display:grid;
+      gap:5px;
+      align-content:start;
+      cursor:pointer;
+      transition:border-color .18s ease, box-shadow .18s ease, transform .18s ease, background .18s ease, outline-color .18s ease;
+    }
+    .exp-node:hover,.exp-node:focus,.exp-node.is-active{border-color:rgba(8,126,134,.45);box-shadow:0 0 0 6px rgba(8,126,134,.1);transform:scale(1.12)}
+    .exp-node.gold:hover,.exp-node.gold:focus,.exp-node.gold.is-active{border-color:rgba(200,148,19,.62)}
+    .exp-node b{display:none;font-size:.78rem;line-height:1.12}
+    .exp-node small{display:none;color:var(--muted);font-size:.72rem;line-height:1.22}
+    .exp-node.rt{border-color:rgba(8,126,134,.28);background:#cdeff2}
+    .exp-node.territory{border-color:rgba(8,126,134,.34);background:#e6f7f8}
+    .exp-node.gold{border-color:rgba(200,148,19,.45);background:#fff0bd}
+    .score-ground{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:minmax(220px,.42fr) minmax(0,1fr);
+      gap:14px;
+      align-items:stretch;
+    }
+    .ground-title{
+      padding:20px;
+      border-radius:20px;
+      background:linear-gradient(145deg,#10233f,var(--navy));
+      color:#fff;
+      display:grid;
+      align-content:center;
+      box-shadow:0 14px 30px rgba(9,40,93,.12);
+    }
+    .ground-title span{color:#9ee4e9;font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem}
+    .ground-title b{font-size:1.35rem;line-height:1.05;letter-spacing:-.035em}
+    .ground-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+    .ground-item{min-height:94px;padding:14px;border:1px solid rgba(217,225,235,.95);border-radius:16px;background:#fff;display:grid;gap:5px;align-content:start}
+    .ground-item span{color:var(--gold);font-weight:950;font-size:.76rem;text-transform:uppercase;letter-spacing:.08em}
+    .ground-item b{color:var(--navy);line-height:1.1}
+    .ground-item small{color:var(--muted);font-size:.8rem;line-height:1.25}
+    .credit-rhythm{margin-top:16px;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}
+    .credit-chip{padding:9px 8px;border:1px solid rgba(8,126,134,.18);border-radius:999px;background:#eefafb;color:#075f65;text-align:center;font-weight:900;font-size:.82rem}
+    .credit-chip:nth-child(n+5){background:#fffaf0;border-color:rgba(200,148,19,.25);color:#8a6200}
+
     .trace-card{padding:28px;overflow:hidden;background:linear-gradient(180deg,#fff,#f8fbfd)}
     .trace-intro{
       display:grid;
@@ -727,7 +1065,7 @@
     @media (max-width: 960px){
       nav{display:none}
       .thesis{grid-template-columns:1fr;text-align:center}.thesis .icon{margin-inline:auto}
-      .profile-grid,.realtime-system,.change-panels,.change-insights,.importance-grid,.functions-system,.iceberg-card,.capstone-panel,.trace-intro{grid-template-columns:1fr}
+      .profile-grid,.realtime-system,.change-panels,.change-insights,.importance-grid,.functions-system,.iceberg-card,.capstone-panel,.score-hero,.score-live,.score-ground,.trace-intro{grid-template-columns:1fr}
       .realtime-principle{min-height:auto}
       .realtime-criteria{grid-template-columns:repeat(2,minmax(0,1fr))}
       .causal-flow{grid-template-columns:1fr;gap:28px}
@@ -740,13 +1078,24 @@
       .function-principle{min-height:auto}
       .function-items{grid-template-columns:1fr}
       .timeline{grid-template-columns:1fr}.timeline::before{left:50%;right:auto;top:70px;bottom:70px;width:10px;height:auto;transform:translateX(-50%)}
+      .experience-score{display:grid;grid-template-columns:1fr;gap:14px;min-height:auto;padding:16px;overflow:visible}.experience-score::before,.score-flow,.field-label,.field-ripple,.field-core{display:none}
+      .semester{position:relative;left:auto;top:auto;width:auto;min-height:auto;transform:none!important}
+      .experience-score.is-focused .semester:not(.is-active){opacity:1;filter:none}
+      .experience-score.is-focused .semester:not(.is-active) .sem-nodes{opacity:1}
+      .sem-head{border-radius:18px}.sem-nodes{display:grid;width:auto;max-width:none;margin:8px 0 0}
+      .experience-score .exp-node{width:auto;height:auto;padding:8px 9px;border-radius:14px;background:#fff}
+      .experience-score .exp-node:hover,.experience-score .exp-node:focus,.experience-score .exp-node.is-active{transform:none}
+      .experience-score .exp-node b,.experience-score .exp-node small{display:block}
+      .runtime-loop{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .ground-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .credit-rhythm{grid-template-columns:repeat(4,minmax(0,1fr))}
       .trace-flow{grid-template-columns:1fr;gap:28px;padding-top:0}.trace-flow::before{display:none}.trace-box:not(:last-child)::after{content:"\2193";right:auto;left:50%;top:auto;bottom:-27px;transform:translateX(-50%)}
       .maturity{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
     @media (max-width: 640px){
       .wrap{width:min(100% - 24px,var(--max))}
       .hero{padding:48px 0 24px}
-      .card-pad,.change-system,.change-panel,.profile-statement,.problem-panel,.profile-chain,.transform-card,.timeline-card,.trace-card,.function-principle,.ice-right{padding:22px}
+      .card-pad,.change-system,.change-panel,.profile-statement,.problem-panel,.profile-chain,.transform-card,.timeline-card,.experience-card,.trace-card,.function-principle,.ice-right{padding:22px}
       .function-principle h3{font-size:1.9rem}
       .function-principle::after{display:none}
       .profile-statement::after{display:none}
@@ -755,6 +1104,13 @@
       .rt-cycle,.realtime-criteria{grid-template-columns:1fr}
       .realtime-principle{padding:22px}
       .realtime-principle h3{font-size:1.9rem}
+      .score-pulse,.score-legend,.runtime-loop,.experience-score,.ground-grid,.credit-rhythm{grid-template-columns:1fr}
+      .live-core{min-height:auto;padding:20px}
+      .runtime-step{min-height:auto}
+      .score-thesis{padding:22px;min-height:auto}
+      .score-thesis h3{font-size:1.75rem}
+      .sem-head{justify-items:start;text-align:left;grid-template-columns:auto 1fr;align-items:center}
+      .sem-head small{grid-column:2}
       .trace-summary,.maturity{grid-template-columns:1fr}
       .trace-principle{padding:22px;min-height:auto}
       .trace-principle h3{font-size:1.72rem}
@@ -780,6 +1136,7 @@
         <a href="#importancia">Importancia</a>
         <a href="#funciones">Funciones</a>
         <a href="#trayectoria">Trayectoria</a>
+        <a href="#experiencias">Experiencias</a>
         <a href="#trazabilidad">Trazabilidad</a>
       </nav>
     </div>
@@ -790,7 +1147,7 @@
       <div class="wrap">
         <div class="eyebrow">Resumen visual de la transformación curricular</div>
         <h1>IDED 2.72</h1>
-        <p class="subtitle">Una arquitectura formativa organizada desde el perfil de egreso y un problema profesional central: hacer que una intención de experiencia exista como sistema interactivo en tiempo real.</p>
+        <p class="subtitle">Hacer que una intención de experiencia exista como sistema interactivo en tiempo real.</p>
         <div class="thesis" role="note" aria-label="Idea fuerza">
           <div class="icon">✦</div>
           <p><strong>Idea central:</strong> IDED 2.72 organiza el programa alrededor de la capacidad de hacer que una intención de experiencia exista, funcione, se pruebe, se ajuste y se despliegue como sistema digital interactivo en tiempo real.</p>
@@ -803,7 +1160,6 @@
       <div class="wrap">
         <div class="section-head">
           <h2><span class="badge">1</span>Perfil y problema central</h2>
-          <p>La transformación curricular no parte de una lista de cursos. Parte del egresado que se quiere formar y del problema profesional que debe poder resolver.</p>
         </div>
         <div class="profile-grid">
           <article class="card profile-statement">
@@ -831,7 +1187,7 @@
             <div class="causal-step"><span>02</span><b>Problema central</b><em>Convierte el perfil en una transformación que el estudiante debe aprender a conducir.</em></div>
             <div class="causal-step"><span>03</span><b>Mapa</b><em>Ordena la ruta desde necesidad, reto u oportunidad hasta despliegue y sustentación.</em></div>
             <div class="causal-step"><span>04</span><b>Funciones y evidencias</b><em>Explican qué capacidades se forman y cómo se observan.</em></div>
-            <div class="causal-step capstone"><span>05</span><b>Capstone / MED</b><em>Demuestra autonomía en la mayor experiencia de diseño.</em></div>
+            <div class="causal-step capstone"><span>05</span><b>MED</b><em>Mayor experiencia de diseño.</em></div>
           </div>
         </div>
       </div>
@@ -841,14 +1197,13 @@
       <div class="wrap">
         <div class="section-head">
           <h2><span class="badge">2</span>Tiempo real como foco</h2>
-          <p>No es un adorno t&eacute;cnico: acota el objeto profesional, diferencia al egresado y ordena las capacidades que el programa debe formar.</p>
         </div>
         <div class="realtime-system">
           <article class="realtime-principle">
             <div>
               <div class="mini-label">Decisi&oacute;n central</div>
               <h3>La experiencia ocurre mientras el sistema responde.</h3>
-              <p>En IDED 2.72, tiempo real significa ejecuci&oacute;n durante el uso: el sistema procesa entradas, actualiza estados y produce respuestas perceptibles mientras la experiencia sucede.</p>
+              <p>En IDED 2.72, el tiempo real significa ejecuci&oacute;n durante el uso: el sistema procesa entradas, actualiza estados y produce respuestas perceptibles mientras la experiencia sucede.</p>
             </div>
             <div class="rt-cycle" aria-label="Ciclo de ejecuci&oacute;n en tiempo real">
               <div class="rt-cycle-item"><span>01</span><b>Entrada</b><small>Usuario, cuerpo, sensor, dato o contexto activan el sistema.</small></div>
@@ -877,7 +1232,6 @@
       <div class="wrap">
         <div class="section-head">
           <h2><span class="badge">3</span>¿Qué cambia?</h2>
-          <p>El rediseño transforma un perfil amplio con líneas de énfasis en una arquitectura guiada por problema, funciones, territorios EDI y evidencia.</p>
         </div>
         <div class="card change-system">
           <div class="change-panels">
@@ -888,7 +1242,7 @@
               </div>
               <p class="profile-excerpt">El egresado concebía, diseñaba, implementaba y gestionaba sistemas de entretenimiento digital desde una formación multidisciplinar en ingeniería, diseño y gestión.</p>
               <div>
-                <p class="emphasis-title">Líneas / rutas de énfasis</p>
+                <p class="emphasis-title">Líneas de énfasis</p>
                 <ul class="route-list">
                   <li>Animación</li>
                   <li>Videojuegos</li>
@@ -905,7 +1259,7 @@
                 <div class="change-kicker">IDED 2.72</div>
                 <h3>Perfil articulado por un problema central y territorios EDI.</h3>
               </div>
-              <p class="profile-excerpt">El territorio ya no define el perfil ni funciona como especialización; introduce presiones para integrar, probar, ajustar y desplegar sistemas vivos.</p>
+              <p class="profile-excerpt">Los EDI no definen el perfil y no funcionan como especialización; los EDI introducen presiones para integrar, probar, ajustar y desplegar sistemas vivos.</p>
               <div>
                 <p class="emphasis-title">Territorios de exploración EDI</p>
                 <ul class="territory-list">
@@ -919,11 +1273,10 @@
             </article>
           </div>
           <div class="change-insights">
-            <div class="insight"><span>Cambio 01</span><b>De énfasis a territorio</b><small>La ruta deja de ser una especialización temprana y se vuelve contexto de presión.</small></div>
+            <div class="insight"><span>Cambio 01</span><b>De énfasis a territorio</b><small>El énfasis deja de ser una especialización temprana y se vuelve territorio de presión.</small></div>
             <div class="insight"><span>Cambio 02</span><b>De producto a problema</b><small>La pregunta no es qué se produce, sino qué transformación debe conducir el estudiante.</small></div>
             <div class="insight"><span>Cambio 03</span><b>De cobertura a evidencia</b><small>Las experiencias existen porque producen desempeños observables del perfil.</small></div>
           </div>
-          <p class="caption">No se eliminan los territorios: se reubican como escenarios de exploración para tensionar el perfil.</p>
         </div>
       </div>
     </section>
@@ -932,7 +1285,6 @@
       <div class="wrap">
         <div class="section-head">
           <h2><span class="badge">4</span>Mapa de transformación</h2>
-          <p>La experiencia se vuelve sistema cuando atraviesa criterios, arquitectura, integración, prueba y despliegue.</p>
         </div>
         <div class="card transform-card">
           <div class="steps" aria-label="Mapa de transformación">
@@ -961,7 +1313,6 @@
       <div class="wrap">
         <div class="section-head">
           <h2><span class="badge">5</span>¿Por qué es importante?</h2>
-          <p>El valor diferencial no está solo en la experiencia visible, sino en el sistema que la sostiene, la hace funcionar y permite evaluarla.</p>
         </div>
         <div class="importance-grid">
           <div class="card iceberg-card">
@@ -1055,7 +1406,7 @@
           </div>
           <div class="card card-pad" style="display:grid;align-content:center">
             <h3 class="block-title">Cambio de foco profesional</h3>
-            <p style="font-size:1.18rem;color:var(--muted);margin:0">IDED 2.72 no forma solo productores de contenido. Forma integradores capaces de hacer que una experiencia exista, funcione, se integre, se pruebe y se sostenga en condiciones reales de operación.</p>
+            <p style="font-size:1.18rem;color:var(--muted);margin:0">IDED 2.72 forma integradores capaces de hacer que una experiencia exista, funcione, se integre, se pruebe y se sostenga en condiciones reales de operación.</p>
             <div class="mini-callout" style="margin-top:22px">La experiencia visible es la punta del iceberg. El objeto profesional es el sistema vivo que la hace posible.</div>
           </div>
         </div>
@@ -1066,7 +1417,6 @@
       <div class="wrap">
         <div class="section-head">
           <h2><span class="badge">6</span>8 funciones curriculares</h2>
-          <p>No son cursos aislados. Son capacidades estructurales que explican por qué existen las experiencias y cómo se articula el perfil.</p>
         </div>
         <div class="functions-system">
           <article class="function-principle">
@@ -1126,26 +1476,170 @@
       <div class="wrap">
         <div class="section-head">
           <h2><span class="badge">7</span>Trayectoria formativa</h2>
-          <p>La formación progresa desde fundamentos comunes hacia presión territorial y culmina en la mayor experiencia de diseño.</p>
         </div>
         <div class="card timeline-card">
           <div class="timeline">
             <div class="phase"><h3>S1–S4</h3><div class="phase-icon">🎓</div><b>Fundamentación profesional común</b></div>
-            <div class="phase"><h3>EDI</h3><div class="phase-icon">📍</div><b>Presión territorial y aprendizaje por demanda</b></div>
-            <div class="phase"><h3>Capstone / MED</h3><div class="phase-icon">↗</div><b>La mayor experiencia de diseño</b></div>
+            <div class="phase"><h3>S5-S7</h3><div class="phase-icon">📍</div><b>Territorios EDI y MED en S7</b></div>
+            <div class="phase"><h3>S8</h3><div class="phase-icon">↗</div><b>Pr&aacute;ctica, proyecto o emprendimiento</b></div>
           </div>
-          <div class="territory-note">El territorio no define el perfil; introduce nuevas presiones de integración, interacción, rendimiento, evidencia y despliegue.</div>
+          <div class="territory-note">El territorio no define el perfil; introduce condiciones de integraci&oacute;n, interacci&oacute;n, rendimiento, evidencia y despliegue.</div>
           <div class="capstone-panel">
             <div class="capstone-title">
-              <div class="mini-label">Síntesis profesional</div>
-              <h3>Problema-reto como demostración del perfil</h3>
-              <p>En Capstone / MED el estudiante recorre autónomamente el mapa completo de transformación.</p>
+              <div class="mini-label">MED</div>
+              <h3>Mayor experiencia de diseño</h3>
             </div>
-            <div class="capstone-proof" aria-label="Evidencias esperadas en Capstone MED">
+            <div class="capstone-proof" aria-label="Lectura curricular de Capstone">
               <div class="proof-item"><span>1</span><b>Formula el reto</b><small>Lee una situación, precisa la intención de experiencia y define criterios operativos.</small></div>
-              <div class="proof-item"><span>2</span><b>Materializa el sistema</b><small>Arquitecta, integra, prueba y ajusta un sistema vivo bajo restricciones reales.</small></div>
+              <div class="proof-item"><span>2</span><b>Materializa el sistema</b><small>Define la arquitectura, integra, prueba y ajusta un sistema vivo bajo restricciones reales.</small></div>
               <div class="proof-item"><span>3</span><b>Sustenta con evidencia</b><small>Documenta, despliega y defiende decisiones ante audiencias diversas.</small></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencias">
+      <div class="wrap">
+        <div class="section-head">
+          <h2><span class="badge">8</span>Plan de experiencias de aprendizaje</h2>
+        </div>
+        <div class="card experience-card">
+          <div class="score-hero">
+            <article class="score-thesis">
+              <div>
+                <div class="mini-label">Plan De Experiencias</div>
+                <h3>Arquitectura formativa.</h3>
+              </div>
+              <div class="score-pulse" aria-label="Pulso de la trayectoria">
+                <div class="pulse-item"><span>01</span><b>S1-S4</b></div>
+                <div class="pulse-item"><span>02</span><b>S5-S7</b></div>
+                <div class="pulse-item"><span>03</span><b>S8</b></div>
+              </div>
+            </article>
+            <div class="score-legend" aria-label="Lectura sem&aacute;ntica del plan de experiencias">
+              <div class="legend-card"><span>S1-S4</span><b>Fundamentaci&oacute;n profesional com&uacute;n</b></div>
+              <div class="legend-card"><span>S5-S7</span><b>Territorios EDI</b></div>
+              <div class="legend-card"><span>S8</span><b>Pr&aacute;ctica</b></div>
+              <div class="legend-card"><span>Institucionales</span><b>Componentes institucionales y complementarios</b></div>
+            </div>
+          </div>
+
+          <div class="score-live" aria-live="polite">
+            <div class="live-core">
+              <div>
+                <span class="live-kicker" id="live-phase">Fundamentaci&oacute;n profesional com&uacute;n</span>
+                <h3 id="live-title">S1 &middot; Nombrar el problema</h3>
+                <p id="live-copy">La trayectoria comienza leyendo una situaci&oacute;n, formulando una intenci&oacute;n de experiencia y activando el primer comportamiento interactivo en tiempo real.</p>
+              </div>
+              <div class="live-meter">
+                <div class="live-meter-track"><span class="live-meter-fill" id="live-fill"></span></div>
+                <div class="live-meter-row"><span id="live-credit">16 cr</span><span id="live-output">Problema formulado</span></div>
+              </div>
+            </div>
+            <div class="runtime-loop" aria-label="Sistema de lectura del plan en ejecuci&oacute;n">
+              <div class="runtime-step is-live"><b id="loop-input">Entrada</b><small>Necesidad, contexto, cuerpo, dato o territorio definen condiciones de trabajo.</small></div>
+              <div class="runtime-step"><b id="loop-state">Estado</b><small>Las funciones curriculares reorganizan criterios, arquitectura y decisiones.</small></div>
+              <div class="runtime-step"><b id="loop-response">Respuesta</b><small>La experiencia produce sistema, evidencia, ajuste y despliegue.</small></div>
+              <div class="runtime-step is-gold"><b id="loop-proof">Evidencia</b><small>El desempe&ntilde;o queda disponible para trazabilidad y assessment.</small></div>
+            </div>
+          </div>
+
+          <div class="experience-score" aria-label="Distribuci&oacute;n visual del PlanDeExperiencias">
+            <svg class="score-flow" viewBox="0 0 1200 790" preserveAspectRatio="none" aria-hidden="true">
+              <path class="flow-base" d="M154 160 C245 86 316 168 286 330 C256 486 120 500 194 565 C310 668 424 670 480 620 C610 512 526 260 672 178 C792 110 888 164 890 300 C892 418 980 395 1016 468 C1055 548 1015 615 985 635" fill="none" stroke="rgba(9,40,93,.26)" stroke-width="8" stroke-linecap="round"/>
+              <path class="flow-live" d="M154 160 C245 86 316 168 286 330 C256 486 120 500 194 565 C310 668 424 670 480 620 C610 512 526 260 672 178 C792 110 888 164 890 300" fill="none" stroke="rgba(8,126,134,.44)" stroke-width="4" stroke-linecap="round"/>
+              <path class="flow-proof" d="M890 300 C892 418 980 395 1016 468 C1055 548 1015 615 985 635" fill="none" stroke="rgba(200,148,19,.44)" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <div class="field-label foundation">Fundamentaci&oacute;n com&uacute;n</div>
+            <div class="field-label territory">Territorios EDI</div>
+            <div class="field-label synthesis">S&iacute;ntesis</div>
+            <div class="field-ripple" aria-hidden="true"></div>
+            <div class="field-core" aria-hidden="true"><span>Objeto profesional</span><b>Sistema vivo en tiempo real</b></div>
+
+            <article class="semester foundation" style="--x:14%;--y:20%;--w:210px" data-semester="S1" data-phase="Fundamentaci&oacute;n profesional com&uacute;n" data-title="Nombrar el problema" data-copy="La trayectoria comienza leyendo una situaci&oacute;n, formulando una intenci&oacute;n de experiencia y activando el primer comportamiento interactivo en tiempo real." data-credit="16 cr" data-output="Problema formulado" data-progress="12.5">
+              <div class="sem-head"><span>S1</span><b>Nombrar el problema</b><small>Inicio</small></div>
+              <div class="sem-nodes">
+                <div class="exp-node"><b>Contexto, intenci&oacute;n y problema de experiencia</b><small>Lectura situada e intenci&oacute;n inicial.</small></div>
+                <div class="exp-node rt"><b>Computaci&oacute;n interactiva en tiempo real</b><small>Primer contacto con comportamiento ejecutable.</small></div>
+              </div>
+            </article>
+            <article class="semester foundation" style="--x:24%;--y:42%;--w:220px" data-semester="S2" data-phase="Fundamentaci&oacute;n profesional com&uacute;n" data-title="Traducir la intenci&oacute;n" data-copy="La intenci&oacute;n se convierte en criterios t&eacute;cnico-creativos, relaciones de sistema y responsabilidad situada." data-credit="18 cr" data-output="Criterios operativos" data-progress="25">
+              <div class="sem-head"><span>S2</span><b>Traducir la intenci&oacute;n</b><small>Lenguaje</small></div>
+              <div class="sem-nodes">
+                <div class="exp-node"><b>Traducci&oacute;n t&eacute;cnico-creativa</b><small>Criterios operativos de experiencia.</small></div>
+                <div class="exp-node"><b>Integraci&oacute;n e interoperabilidad</b><small>Primeras relaciones del sistema vivo.</small></div>
+                <div class="exp-node"><b>Responsabilidad situada e impacto</b><small>Criterio &eacute;tico y contextual.</small></div>
+                <div class="exp-node rt"><b>Materialidad expresiva en tiempo real</b><small>Imagen, sonido, movimiento y atm&oacute;sfera.</small></div>
+              </div>
+            </article>
+            <article class="semester foundation" style="--x:16%;--y:70%;--w:220px" data-semester="S3" data-phase="Fundamentaci&oacute;n profesional com&uacute;n" data-title="Arquitectura y Pruebas" data-copy="La evidencia aparece como motor de ajuste: el estudiante prueba calidad, organiza arquitectura y sustenta decisiones." data-credit="18 cr" data-output="Arquitectura verificable" data-progress="37.5">
+              <div class="sem-head"><span>S3</span><b>Arquitectura y Pruebas</b><small>Evidencia</small></div>
+              <div class="sem-nodes">
+                <div class="exp-node"><b>Prueba, evidencia y calidad de experiencia</b><small>Evaluar para ajustar decisiones.</small></div>
+                <div class="exp-node"><b>Producci&oacute;n profesional y sustentaci&oacute;n</b><small>Documentar, comunicar y defender.</small></div>
+                <div class="exp-node rt"><b>Arquitectura de sistemas interactivos en tiempo real</b><small>Componentes, estados, motores y flujos.</small></div>
+              </div>
+            </article>
+            <article class="semester foundation" style="--x:41%;--y:78%;--w:225px" data-semester="S4" data-phase="Fundamentaci&oacute;n profesional com&uacute;n" data-title="Operar el sistema" data-copy="La fundamentaci&oacute;n cierra con proceduralidad, cuerpo, sensores, datos y condiciones de operaci&oacute;n." data-credit="17 cr" data-output="Sistema operable" data-progress="50">
+              <div class="sem-head"><span>S4</span><b>Operar el sistema</b><small>Integraci&oacute;n</small></div>
+              <div class="sem-nodes">
+                <div class="exp-node rt"><b>Proceduralidad visual, movimiento y efectos</b><small>Materialidad generativa y comportamiento.</small></div>
+                <div class="exp-node"><b>Interacci&oacute;n situada, cuerpo, sensores y datos</b><small>Entrada, se&ntilde;al, contexto y respuesta.</small></div>
+                <div class="exp-node"><b>Despliegue, operaci&oacute;n, optimizaci&oacute;n y evidencia</b><small>Condiciones reales de funcionamiento.</small></div>
+              </div>
+            </article>
+            <article class="semester edi" style="--x:58%;--y:22%;--w:220px" data-semester="S5" data-phase="Territorios EDI" data-title="Primer territorio" data-copy="La capacidad com&uacute;n se tensiona con narrativa audiovisual en tiempo real y sistemas l&uacute;dicos digitales." data-credit="17 cr" data-output="Transferencia inicial" data-progress="62.5">
+              <div class="sem-head"><span>S5</span><b>Primer territorio</b><small>EDI</small></div>
+              <div class="sem-nodes">
+                <div class="exp-node territory"><b>EDI 1: Narrativa audiovisual en tiempo real</b><small>Relato, imagen, sonido y ejecuci&oacute;n viva.</small></div>
+                <div class="exp-node territory"><b>EDI 2: Sistemas l&uacute;dicos digitales</b><small>Reglas, interacci&oacute;n, progreso y respuesta.</small></div>
+              </div>
+            </article>
+            <article class="semester edi" style="--x:74%;--y:38%;--w:225px" data-semester="S6" data-phase="Territorios EDI" data-title="Sistemas sensibles" data-copy="S6 contiene EDI 3, EDI 4, Sistemas de control, Laboratorio de F&iacute;sica de Ondas, Flexible 1 y Flexible de humanismo 1." data-credit="17 cr" data-output="EDI 3 + EDI 4" data-progress="75">
+              <div class="sem-head"><span>S6</span><b>Sistemas sensibles</b><small>Transferencia</small></div>
+              <div class="sem-nodes">
+                <div class="exp-node territory"><b>EDI 3: Cuerpo, interacci&oacute;n y sistemas sensibles</b><small>Cuerpo, sensores, presencia y situaci&oacute;n.</small></div>
+                <div class="exp-node territory"><b>EDI 4: Sistemas visuales procedurales en tiempo real</b><small>Se&ntilde;al, control, visualidad y optimizaci&oacute;n.</small></div>
+              </div>
+            </article>
+            <article class="semester edi" style="--x:86%;--y:58%;--w:215px" data-semester="S7" data-phase="Territorios EDI y Capstone" data-title="EDI 5 y Capstone" data-copy="S7 contiene EDI 5, Capstone, Prepr&aacute;ctica, &Eacute;tica general, Emprendimiento y responsabilidad social, Flexible 2 y Flexible 3." data-credit="16 cr" data-output="Capstone en S7" data-progress="87.5">
+              <div class="sem-head"><span>S7</span><b>EDI 5 y Capstone</b><small>Cierre EDI</small></div>
+              <div class="sem-nodes">
+                <div class="exp-node territory"><b>EDI 5: Sistemas inmersivos interactivos</b><small>Presencia, espacio, tecnolog&iacute;a y despliegue.</small></div>
+                <div class="exp-node gold"><b>Capstone</b><small>Ubicado en S7 en PlanDeExperiencias.</small></div>
+                <div class="exp-node"><b>Prepr&aacute;ctica</b><small>Componente de 1 cr&eacute;dito en S7.</small></div>
+              </div>
+            </article>
+            <article class="semester closing" style="--x:83%;--y:78%;--w:235px" data-semester="S8" data-phase="Cierre profesional e institucional" data-title="Pr&aacute;ctica, proyecto o emprendimiento" data-copy="S8 contiene Pr&aacute;ctica, proyecto o emprendimiento, &Eacute;tica profesional, Flexible de humanismo 2, Flexible 4 y Flexible 5. No contiene Capstone en el plan verificado." data-credit="17 cr" data-output="Pr&aacute;ctica/proyecto/emprendimiento" data-progress="100">
+              <div class="sem-head"><span>S8</span><b>Pr&aacute;ctica</b><small>Cierre</small></div>
+              <div class="sem-nodes">
+                <div class="exp-node gold"><b>Pr&aacute;ctica, proyecto o emprendimiento</b><small>9 cr&eacute;ditos en S8.</small></div>
+                <div class="exp-node"><b>&Eacute;tica profesional</b><small>1 cr&eacute;dito en S8.</small></div>
+                <div class="exp-node"><b>Flexible de humanismo 2</b><small>2 cr&eacute;ditos en S8.</small></div>
+                <div class="exp-node"><b>Flexible 4 y Flexible 5</b><small>5 cr&eacute;ditos flexibles en S8.</small></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="score-ground" aria-label="Componentes institucionales y complementarios del plan">
+            <div class="ground-title"><span>Componentes institucionales</span><b>Obligatorios y complementarios del plan.</b></div>
+            <div class="ground-grid">
+              <div class="ground-item"><span>33 cr</span><b>Ciencia b&aacute;sica</b></div>
+              <div class="ground-item"><span>14 cr</span><b>Humanidades</b></div>
+              <div class="ground-item"><span>14 cr</span><b>Flexibles</b></div>
+              <div class="ground-item"><span>136 cr</span><b>Total del programa</b></div>
+            </div>
+          </div>
+          <div class="credit-rhythm" aria-label="Cr&eacute;ditos por semestre">
+            <div class="credit-chip">S1 &middot; 16 cr</div>
+            <div class="credit-chip">S2 &middot; 18 cr</div>
+            <div class="credit-chip">S3 &middot; 18 cr</div>
+            <div class="credit-chip">S4 &middot; 17 cr</div>
+            <div class="credit-chip">S5 &middot; 17 cr</div>
+            <div class="credit-chip">S6 &middot; 17 cr</div>
+            <div class="credit-chip">S7 &middot; 16 cr</div>
+            <div class="credit-chip">S8 &middot; 17 cr</div>
           </div>
         </div>
       </div>
@@ -1154,8 +1648,7 @@
     <section id="trazabilidad">
       <div class="wrap">
         <div class="section-head">
-          <h2><span class="badge">8</span>Lógica de trazabilidad</h2>
-          <p>La matriz se reconstruye desde desempeños observables, no desde la necesidad de llenar celdas por curso.</p>
+          <h2><span class="badge">9</span>Lógica de trazabilidad</h2>
         </div>
         <div class="card trace-card">
           <div class="trace-intro">
@@ -1163,12 +1656,11 @@
               <div>
                 <div class="mini-label">Matriz viva</div>
                 <h3>De intenci&oacute;n curricular a evidencia verificable</h3>
-                <p>Cada celda tiene sentido cuando conserva la cadena entre resultado, pregunta, funci&oacute;n y demostraci&oacute;n.</p>
               </div>
               <div class="trace-checks" aria-label="Criterios de trazabilidad">
                 <div class="trace-check"><span>01</span><b>Desempe&ntilde;o observable antes que tema declarado</b></div>
                 <div class="trace-check"><span>02</span><b>Evidencia alineada con la funci&oacute;n profesional</b></div>
-                <div class="trace-check"><span>03</span><b>Madurez progresiva, no repetici&oacute;n de etiquetas</b></div>
+                <div class="trace-check"><span>03</span><b>Madurez progresiva</b></div>
               </div>
             </div>
             <div class="trace-summary" aria-label="Principios de lectura de la matriz">
@@ -1191,7 +1683,6 @@
             <div class="mat-step"><span>M</span><b>Madurez</b><small>Integra decisiones, evidencia y ajustes con autonom&iacute;a.</small></div>
             <div class="mat-step"><span>M*</span><b>Assessment program&aacute;tico</b><small>Demuestra el perfil en una experiencia integradora.</small></div>
           </div>
-          <p class="caption">La matriz no se construye desde el curso, sino desde el desempe&ntilde;o observable.</p>
         </div>
 
       </div>
@@ -1203,5 +1694,104 @@
       Resumen visual IDED 2.72.
     </div>
   </footer>
+  <script>
+    (() => {
+      const score = document.querySelector(".experience-score");
+      if (!score) return;
+
+      const live = {
+        phase: document.getElementById("live-phase"),
+        title: document.getElementById("live-title"),
+        copy: document.getElementById("live-copy"),
+        fill: document.getElementById("live-fill"),
+        credit: document.getElementById("live-credit"),
+        output: document.getElementById("live-output"),
+      };
+      const runtimeSteps = [...document.querySelectorAll(".runtime-step")];
+      const semesters = [...score.querySelectorAll(".semester")];
+
+      function activeRuntimeIndex(semesterId, node) {
+        if (node?.classList.contains("gold")) return 3;
+        if (node?.classList.contains("territory")) return 2;
+        if (node?.classList.contains("rt")) return 1;
+        const index = Number(String(semesterId).replace("S", ""));
+        if (index >= 8) return 3;
+        if (index >= 5) return 2;
+        if (index >= 3) return 1;
+        return 0;
+      }
+
+      function setLiveRuntime(index) {
+        runtimeSteps.forEach((step, i) => {
+          step.classList.toggle("is-live", i === index);
+        });
+      }
+
+      function activateSemester(semester, node = null) {
+        const nodeTitle = node?.querySelector("b")?.textContent?.trim();
+        const nodeCopy = node?.querySelector("small")?.textContent?.trim();
+        const title = nodeTitle || semester.dataset.title;
+        const copy = nodeCopy
+          ? `${nodeCopy} Esta experiencia se lee dentro de ${semester.dataset.title.toLowerCase()}.`
+          : semester.dataset.copy;
+
+        semesters.forEach(item => {
+          const active = item === semester;
+          item.classList.toggle("is-active", active);
+          item.setAttribute("aria-pressed", String(active));
+          item.querySelectorAll(".exp-node").forEach(exp => exp.classList.toggle("is-active", exp === node));
+        });
+
+        score.classList.add("is-focused");
+        live.phase.textContent = semester.dataset.phase;
+        live.title.textContent = `${semester.dataset.semester} \u00b7 ${title}`;
+        live.copy.textContent = copy;
+        live.credit.textContent = semester.dataset.credit;
+        live.output.textContent = nodeTitle ? "Experiencia activa" : semester.dataset.output;
+        live.fill.style.width = `${semester.dataset.progress}%`;
+        setLiveRuntime(activeRuntimeIndex(semester.dataset.semester, node));
+      }
+
+      semesters.forEach(semester => {
+        semester.tabIndex = 0;
+        semester.setAttribute("role", "button");
+        semester.setAttribute("aria-pressed", "false");
+        semester.setAttribute("aria-label", `${semester.dataset.semester}: ${semester.dataset.title}`);
+        semester.title = `${semester.dataset.semester}: ${semester.dataset.title}`;
+
+        semester.addEventListener("focus", () => activateSemester(semester));
+        semester.addEventListener("click", event => {
+          if (!event.target.closest(".exp-node")) activateSemester(semester);
+        });
+        semester.addEventListener("keydown", event => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            activateSemester(semester);
+          }
+        });
+
+        semester.querySelectorAll(".exp-node").forEach(node => {
+          node.tabIndex = 0;
+          const nodeLabel = `${semester.dataset.semester}: ${node.querySelector("b")?.textContent?.trim()}`;
+          node.setAttribute("role", "button");
+          node.setAttribute("aria-label", nodeLabel);
+          node.title = nodeLabel;
+          node.addEventListener("focus", () => activateSemester(semester, node));
+          node.addEventListener("click", event => {
+            event.stopPropagation();
+            activateSemester(semester, node);
+          });
+          node.addEventListener("keydown", event => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              activateSemester(semester, node);
+            }
+          });
+        });
+      });
+
+      activateSemester(semesters[0]);
+    })();
+  </script>
 </body>
 </html>
