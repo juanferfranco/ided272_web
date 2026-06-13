@@ -221,27 +221,88 @@
     .causal-step.capstone span{background:var(--gold)}
     .causal-step.capstone b{color:#8a6200}
 
-    .change-grid{
+    .change-system{padding:28px;display:grid;gap:20px}
+    .change-panels{display:grid;grid-template-columns:minmax(0,1fr) 92px minmax(0,1fr);gap:18px;align-items:stretch}
+    .change-panel{
+      padding:24px;
+      border:1px solid rgba(217,225,235,.95);
+      border-radius:22px;
+      background:#fff;
+      box-shadow:0 12px 28px rgba(9,40,93,.07);
       display:grid;
-      grid-template-columns:1fr auto 1fr;
-      gap:20px;
+      align-content:start;
+      gap:18px;
+      min-height:460px;
+    }
+    .change-panel.before{background:linear-gradient(180deg,#fff,#f8fbfd)}
+    .change-panel.after{background:linear-gradient(180deg,#fff,#f1fbfc);border-color:rgba(8,126,134,.22)}
+    .change-kicker{font-size:.78rem;font-weight:950;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .change-panel.after .change-kicker{color:var(--teal)}
+    .change-panel h3{margin:0;color:var(--navy);font-size:1.72rem;line-height:1.02;letter-spacing:-.045em}
+    .change-panel p{margin:0;color:var(--muted);font-size:1rem}
+    .profile-excerpt{padding:16px 17px;border-left:4px solid #b7c1cf;background:#fff;border-radius:0 16px 16px 0;color:#31425d;font-weight:750;line-height:1.35}
+    .change-panel.after .profile-excerpt{border-left-color:var(--teal);background:#eefafb;color:#075f65}
+    .emphasis-title{margin:0;color:var(--navy);font-size:.86rem;font-weight:950;text-transform:uppercase;letter-spacing:.08em}
+    .route-list,.territory-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+    .route-list li,.territory-list li{
+      display:flex;
       align-items:center;
+      gap:10px;
+      min-height:46px;
+      padding:10px 12px;
+      border:1px solid rgba(217,225,235,.95);
+      border-radius:14px;
+      background:rgba(255,255,255,.78);
+      color:var(--navy);
+      font-weight:850;
+      line-height:1.12;
     }
-    .before-stack,.after-stack{display:grid;gap:12px}
-    .mini-label{font-weight:850;color:var(--muted);font-size:1.08rem;margin-bottom:8px}
-    .frag,.flow-item{
+    .route-list li::before,.territory-list li::before{content:"";width:12px;height:12px;border-radius:4px;background:#97a4b6;transform:rotate(45deg);flex:0 0 auto}
+    .territory-list li{border-color:rgba(8,126,134,.18);background:#fff}
+    .territory-list li::before{background:var(--teal)}
+    .change-bridge{
+      align-self:center;
+      min-height:360px;
+      display:grid;
+      place-items:center;
+      gap:14px;
+      color:var(--navy);
+    }
+    .bridge-arrow{
+      width:68px;
+      height:68px;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      background:linear-gradient(135deg,var(--navy),var(--teal));
+      font-size:2rem;
+      font-weight:950;
+      box-shadow:0 16px 34px rgba(8,126,134,.2);
+    }
+    .bridge-note{
+      writing-mode:vertical-rl;
+      transform:rotate(180deg);
+      color:var(--muted);
+      font-size:.8rem;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+    }
+    .change-insights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .insight{
+      padding:15px;
+      border:1px solid rgba(9,40,93,.14);
       border-radius:16px;
-      padding:14px 14px;
-      display:flex;align-items:center;gap:10px;
-      font-weight:760;
-      min-height:54px;
+      background:#fff;
+      display:grid;
+      gap:6px;
+      min-height:108px;
     }
-    .frag{border:1.6px dashed #b7c1cf;color:#596579;background:#fff;transform:rotate(-2deg)}
-    .frag:nth-child(3){transform:rotate(1.7deg)}
-    .frag:nth-child(4){transform:rotate(-1deg)}
-    .frag:nth-child(5){transform:rotate(1deg)}
-    .flow-item{border:1px solid rgba(8,126,134,.32);background:linear-gradient(180deg,#fff,#f0fbfb);color:var(--teal)}
-    .arrow-big{font-size:3.2rem;color:var(--navy);font-weight:900}
+    .insight span{color:var(--gold);font-weight:950;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+    .insight b{color:var(--navy);line-height:1.1}
+    .insight small{color:var(--muted);font-size:.84rem;line-height:1.28}
+    .mini-label{font-weight:850;color:var(--muted);font-size:1.08rem;margin-bottom:8px}
     .caption{color:var(--navy);font-weight:700;margin-top:20px;text-align:center}
 
     .transform-card{padding:32px 28px}
@@ -428,12 +489,13 @@
     @media (max-width: 960px){
       nav{display:none}
       .thesis{grid-template-columns:1fr;text-align:center}.thesis .icon{margin-inline:auto}
-      .profile-grid,.change-grid,.importance-grid,.functions-system,.iceberg-card,.capstone-panel{grid-template-columns:1fr}
+      .profile-grid,.change-panels,.change-insights,.importance-grid,.functions-system,.iceberg-card,.capstone-panel{grid-template-columns:1fr}
       .causal-flow{grid-template-columns:1fr;gap:28px}
       .causal-step{min-height:auto}
       .causal-step:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-25px;transform:translateX(-50%)}
       .capstone-proof{grid-template-columns:1fr}
-      .arrow-big{transform:rotate(90deg);text-align:center}
+      .change-bridge{min-height:auto;display:flex;justify-content:center}
+      .bridge-note{writing-mode:horizontal-tb;transform:none}
       .steps{grid-template-columns:repeat(2,1fr);gap:18px}.step:not(:last-child)::after{display:none}
       .function-principle{min-height:auto}
       .function-items{grid-template-columns:1fr}
@@ -444,7 +506,7 @@
     @media (max-width: 640px){
       .wrap{width:min(100% - 24px,var(--max))}
       .hero{padding:48px 0 24px}
-      .card-pad,.profile-statement,.problem-panel,.profile-chain,.transform-card,.timeline-card,.trace-card,.function-principle,.ice-right{padding:22px}
+      .card-pad,.change-system,.change-panel,.profile-statement,.problem-panel,.profile-chain,.transform-card,.timeline-card,.trace-card,.function-principle,.ice-right{padding:22px}
       .function-principle h3{font-size:1.9rem}
       .function-principle::after{display:none}
       .profile-statement::after{display:none}
@@ -532,33 +594,53 @@
       <div class="wrap">
         <div class="section-head">
           <h2><span class="badge">2</span>¿Qué cambia?</h2>
-          <p>El rediseño deja de leerse como una suma de áreas y pasa a entenderse como una arquitectura articulada por perfil, problema, funciones, experiencias y evidencia.</p>
+          <p>El rediseño transforma un perfil amplio con líneas de énfasis en una arquitectura guiada por problema, funciones, territorios EDI y evidencia.</p>
         </div>
-        <div class="card card-pad">
-          <div class="change-grid">
-            <div>
-              <div class="mini-label">Antes</div>
-              <div class="before-stack" aria-label="Antes">
-                <div class="frag">▦ áreas</div>
-                <div class="frag">🛠 herramientas</div>
-                <div class="frag">▤ contenidos</div>
-                <div class="frag">◼ productos</div>
+        <div class="card change-system">
+          <div class="change-panels">
+            <article class="change-panel before">
+              <div>
+                <div class="change-kicker">IDED 2.0</div>
+                <h3>Perfil amplio organizado por producción, gestión y líneas de énfasis.</h3>
               </div>
-            </div>
-            <div class="arrow-big" aria-hidden="true">→</div>
-            <div>
-              <div class="mini-label" style="color:var(--teal)">Ahora</div>
-              <div class="after-stack" aria-label="Ahora">
-                <div class="flow-item">⟡ perfil</div>
-                <div class="flow-item">◎ problema central</div>
-                <div class="flow-item">⌘ funciones curriculares</div>
-                <div class="flow-item">☷ experiencias</div>
-                <div class="flow-item">☑ evidencia</div>
-                <div class="flow-item">▰ assessment</div>
+              <p class="profile-excerpt">El egresado concebía, diseñaba, implementaba y gestionaba sistemas de entretenimiento digital desde una formación multidisciplinar en ingeniería, diseño y gestión.</p>
+              <div>
+                <p class="emphasis-title">Líneas / rutas de énfasis</p>
+                <ul class="route-list">
+                  <li>Animación</li>
+                  <li>Videojuegos</li>
+                  <li>Experiencias interactivas</li>
+                </ul>
               </div>
+            </article>
+            <div class="change-bridge" aria-hidden="true">
+              <div class="bridge-arrow">→</div>
+              <div class="bridge-note">se transforma en</div>
             </div>
+            <article class="change-panel after">
+              <div>
+                <div class="change-kicker">IDED 2.72</div>
+                <h3>Perfil articulado por un problema central y territorios EDI.</h3>
+              </div>
+              <p class="profile-excerpt">El territorio ya no define el perfil ni funciona como especialización; introduce presiones para integrar, probar, ajustar y desplegar sistemas vivos.</p>
+              <div>
+                <p class="emphasis-title">Territorios de exploración EDI</p>
+                <ul class="territory-list">
+                  <li>Narrativa audiovisual en tiempo real</li>
+                  <li>Sistemas lúdicos digitales</li>
+                  <li>Cuerpo, interacción y sistemas sensibles</li>
+                  <li>Sistemas visuales procedurales en tiempo real</li>
+                  <li>Sistemas inmersivos interactivos</li>
+                </ul>
+              </div>
+            </article>
           </div>
-          <p class="caption">No se agregan cursos: se ordena la formación desde la transformación que el egresado debe conducir.</p>
+          <div class="change-insights">
+            <div class="insight"><span>Cambio 01</span><b>De énfasis a territorio</b><small>La ruta deja de ser una especialización temprana y se vuelve contexto de presión.</small></div>
+            <div class="insight"><span>Cambio 02</span><b>De producto a problema</b><small>La pregunta no es qué se produce, sino qué transformación debe conducir el estudiante.</small></div>
+            <div class="insight"><span>Cambio 03</span><b>De cobertura a evidencia</b><small>Las experiencias existen porque producen desempeños observables del perfil.</small></div>
+          </div>
+          <p class="caption">No se eliminan los territorios: se reubican como escenarios de exploración para tensionar el perfil.</p>
         </div>
       </div>
     </section>
