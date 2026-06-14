@@ -603,7 +603,7 @@
     .score-live{
       margin:0 0 14px;
       display:grid;
-      grid-template-columns:minmax(280px,.82fr) minmax(0,1.18fr);
+      grid-template-columns:1fr;
       gap:14px;
       align-items:stretch;
     }
@@ -636,42 +636,6 @@
     .live-meter-track{height:10px;border-radius:999px;background:rgba(255,255,255,.14);overflow:hidden}
     .live-meter-fill{display:block;width:12.5%;height:100%;border-radius:999px;background:linear-gradient(90deg,#9ee4e9,#ffd56b);transition:width .38s ease}
     .live-meter-row{display:flex;justify-content:space-between;gap:12px;color:rgba(255,255,255,.72);font-weight:850;font-size:.78rem}
-    .runtime-loop{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:10px;
-      padding:16px;
-      border:1px solid rgba(217,225,235,.95);
-      border-radius:22px;
-      background:#fff;
-      box-shadow:0 12px 28px rgba(9,40,93,.07);
-    }
-    .runtime-step{
-      min-height:166px;
-      padding:15px;
-      border:1px solid rgba(9,40,93,.12);
-      border-radius:18px;
-      background:linear-gradient(180deg,#fff,#f8fbfd);
-      display:grid;
-      gap:8px;
-      align-content:start;
-      position:relative;
-      overflow:hidden;
-    }
-    .runtime-step::before{
-      content:"";
-      width:34px;
-      height:34px;
-      border-radius:999px;
-      background:var(--navy);
-      box-shadow:0 8px 18px rgba(9,40,93,.14);
-    }
-    .runtime-step.is-live{border-color:rgba(8,126,134,.38);background:#eefafb}
-    .runtime-step.is-live::before{background:var(--teal);animation:liveBeat 1.35s ease-in-out infinite}
-    .runtime-step.is-gold{border-color:rgba(200,148,19,.38);background:#fffaf0}
-    .runtime-step.is-gold::before{background:var(--gold)}
-    .runtime-step b{color:var(--navy);line-height:1.1}
-    .runtime-step small{color:var(--muted);font-size:.82rem;line-height:1.28}
     @keyframes liveBeat{
       0%,100%{box-shadow:0 0 0 0 rgba(8,126,134,.22),0 8px 18px rgba(9,40,93,.12)}
       50%{box-shadow:0 0 0 10px rgba(8,126,134,.08),0 12px 22px rgba(9,40,93,.16)}
@@ -1086,7 +1050,6 @@
       .experience-score .exp-node{width:auto;height:auto;padding:8px 9px;border-radius:14px;background:#fff}
       .experience-score .exp-node:hover,.experience-score .exp-node:focus,.experience-score .exp-node.is-active{transform:none}
       .experience-score .exp-node b,.experience-score .exp-node small{display:block}
-      .runtime-loop{grid-template-columns:repeat(2,minmax(0,1fr))}
       .ground-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .credit-rhythm{grid-template-columns:repeat(4,minmax(0,1fr))}
       .trace-flow{grid-template-columns:1fr;gap:28px;padding-top:0}.trace-flow::before{display:none}.trace-box:not(:last-child)::after{content:"\2193";right:auto;left:50%;top:auto;bottom:-27px;transform:translateX(-50%)}
@@ -1104,9 +1067,8 @@
       .rt-cycle,.realtime-criteria{grid-template-columns:1fr}
       .realtime-principle{padding:22px}
       .realtime-principle h3{font-size:1.9rem}
-      .score-pulse,.score-legend,.runtime-loop,.experience-score,.ground-grid,.credit-rhythm{grid-template-columns:1fr}
+      .score-pulse,.score-legend,.experience-score,.ground-grid,.credit-rhythm{grid-template-columns:1fr}
       .live-core{min-height:auto;padding:20px}
-      .runtime-step{min-height:auto}
       .score-thesis{padding:22px;min-height:auto}
       .score-thesis h3{font-size:1.75rem}
       .sem-head{justify-items:start;text-align:left;grid-template-columns:auto 1fr;align-items:center}
@@ -1508,8 +1470,8 @@
           <div class="score-hero">
             <article class="score-thesis">
               <div>
-                <div class="mini-label">Plan De Experiencias</div>
-                <h3>Arquitectura formativa.</h3>
+                <div class="mini-label">Plan de experiencias</div>
+                <h3>Experiencias de aprendizaje por semestre.</h3>
               </div>
               <div class="score-pulse" aria-label="Pulso de la trayectoria">
                 <div class="pulse-item"><span>01</span><b>S1-S4</b></div>
@@ -1517,10 +1479,10 @@
                 <div class="pulse-item"><span>03</span><b>S8</b></div>
               </div>
             </article>
-            <div class="score-legend" aria-label="Lectura sem&aacute;ntica del plan de experiencias">
+            <div class="score-legend" aria-label="Agrupaciones del plan de experiencias">
               <div class="legend-card"><span>S1-S4</span><b>Fundamentaci&oacute;n profesional com&uacute;n</b></div>
               <div class="legend-card"><span>S5-S7</span><b>Territorios EDI</b></div>
-              <div class="legend-card"><span>S8</span><b>Pr&aacute;ctica</b></div>
+              <div class="legend-card"><span>S8</span><b>Pr&aacute;ctica, proyecto o emprendimiento</b></div>
               <div class="legend-card"><span>Institucionales</span><b>Componentes institucionales y complementarios</b></div>
             </div>
           </div>
@@ -1528,96 +1490,115 @@
           <div class="score-live" aria-live="polite">
             <div class="live-core">
               <div>
-                <span class="live-kicker" id="live-phase">Fundamentaci&oacute;n profesional com&uacute;n</span>
-                <h3 id="live-title">S1 &middot; Nombrar el problema</h3>
-                <p id="live-copy">La trayectoria comienza leyendo una situaci&oacute;n, formulando una intenci&oacute;n de experiencia y activando el primer comportamiento interactivo en tiempo real.</p>
+                <span class="live-kicker" id="live-phase">Plan de experiencias</span>
+                <h3 id="live-title">S1 &middot; Semestre 1</h3>
+                <p id="live-copy">Contexto, intenci&oacute;n y problema de experiencia; Computaci&oacute;n interactiva en tiempo real; Introducci&oacute;n a la Ingenier&iacute;a; Fundamentos Matem&aacute;ticos; Matem&aacute;ticas discretas; Lengua y cultura.</p>
               </div>
               <div class="live-meter">
                 <div class="live-meter-track"><span class="live-meter-fill" id="live-fill"></span></div>
-                <div class="live-meter-row"><span id="live-credit">16 cr</span><span id="live-output">Problema formulado</span></div>
+                <div class="live-meter-row"><span id="live-credit">16 cr</span><span id="live-output">6 componentes</span></div>
               </div>
-            </div>
-            <div class="runtime-loop" aria-label="Sistema de lectura del plan en ejecuci&oacute;n">
-              <div class="runtime-step is-live"><b id="loop-input">Entrada</b><small>Necesidad, contexto, cuerpo, dato o territorio definen condiciones de trabajo.</small></div>
-              <div class="runtime-step"><b id="loop-state">Estado</b><small>Las funciones curriculares reorganizan criterios, arquitectura y decisiones.</small></div>
-              <div class="runtime-step"><b id="loop-response">Respuesta</b><small>La experiencia produce sistema, evidencia, ajuste y despliegue.</small></div>
-              <div class="runtime-step is-gold"><b id="loop-proof">Evidencia</b><small>El desempe&ntilde;o queda disponible para trazabilidad y assessment.</small></div>
             </div>
           </div>
 
-          <div class="experience-score" aria-label="Distribuci&oacute;n visual del PlanDeExperiencias">
+          <div class="experience-score" aria-label="Estructura visual del plan de experiencias">
             <svg class="score-flow" viewBox="0 0 1200 790" preserveAspectRatio="none" aria-hidden="true">
               <path class="flow-base" d="M154 160 C245 86 316 168 286 330 C256 486 120 500 194 565 C310 668 424 670 480 620 C610 512 526 260 672 178 C792 110 888 164 890 300 C892 418 980 395 1016 468 C1055 548 1015 615 985 635" fill="none" stroke="rgba(9,40,93,.26)" stroke-width="8" stroke-linecap="round"/>
               <path class="flow-live" d="M154 160 C245 86 316 168 286 330 C256 486 120 500 194 565 C310 668 424 670 480 620 C610 512 526 260 672 178 C792 110 888 164 890 300" fill="none" stroke="rgba(8,126,134,.44)" stroke-width="4" stroke-linecap="round"/>
               <path class="flow-proof" d="M890 300 C892 418 980 395 1016 468 C1055 548 1015 615 985 635" fill="none" stroke="rgba(200,148,19,.44)" stroke-width="4" stroke-linecap="round"/>
             </svg>
-            <div class="field-label foundation">Fundamentaci&oacute;n com&uacute;n</div>
-            <div class="field-label territory">Territorios EDI</div>
-            <div class="field-label synthesis">S&iacute;ntesis</div>
+            <div class="field-label foundation">S1-S4</div>
+            <div class="field-label territory">S5-S7</div>
+            <div class="field-label synthesis">S8</div>
             <div class="field-ripple" aria-hidden="true"></div>
             <div class="field-core" aria-hidden="true"><span>Objeto profesional</span><b>Sistema vivo en tiempo real</b></div>
 
-            <article class="semester foundation" style="--x:14%;--y:20%;--w:210px" data-semester="S1" data-phase="Fundamentaci&oacute;n profesional com&uacute;n" data-title="Nombrar el problema" data-copy="La trayectoria comienza leyendo una situaci&oacute;n, formulando una intenci&oacute;n de experiencia y activando el primer comportamiento interactivo en tiempo real." data-credit="16 cr" data-output="Problema formulado" data-progress="12.5">
-              <div class="sem-head"><span>S1</span><b>Nombrar el problema</b><small>Inicio</small></div>
+            <article class="semester foundation" style="--x:14%;--y:20%;--w:210px" data-semester="S1" data-phase="Plan de experiencias" data-title="Semestre 1" data-copy="Contexto, intenci&oacute;n y problema de experiencia; Computaci&oacute;n interactiva en tiempo real; Introducci&oacute;n a la Ingenier&iacute;a; Fundamentos Matem&aacute;ticos; Matem&aacute;ticas discretas; Lengua y cultura." data-credit="16 cr" data-output="6 componentes" data-progress="12.5">
+              <div class="sem-head"><span>S1</span><b>Semestre 1</b><small>16 cr</small></div>
               <div class="sem-nodes">
-                <div class="exp-node"><b>Contexto, intenci&oacute;n y problema de experiencia</b><small>Lectura situada e intenci&oacute;n inicial.</small></div>
-                <div class="exp-node rt"><b>Computaci&oacute;n interactiva en tiempo real</b><small>Primer contacto con comportamiento ejecutable.</small></div>
+                <div class="exp-node"><b>Contexto, intenci&oacute;n y problema de experiencia</b><small>3 cr.</small></div>
+                <div class="exp-node rt"><b>Computaci&oacute;n interactiva en tiempo real</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Introducci&oacute;n a la Ingenier&iacute;a</b><small>2 cr.</small></div>
+                <div class="exp-node"><b>Fundamentos Matem&aacute;ticos</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Matem&aacute;ticas discretas</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Lengua y cultura</b><small>2 cr.</small></div>
               </div>
             </article>
-            <article class="semester foundation" style="--x:24%;--y:42%;--w:220px" data-semester="S2" data-phase="Fundamentaci&oacute;n profesional com&uacute;n" data-title="Traducir la intenci&oacute;n" data-copy="La intenci&oacute;n se convierte en criterios t&eacute;cnico-creativos, relaciones de sistema y responsabilidad situada." data-credit="18 cr" data-output="Criterios operativos" data-progress="25">
-              <div class="sem-head"><span>S2</span><b>Traducir la intenci&oacute;n</b><small>Lenguaje</small></div>
+            <article class="semester foundation" style="--x:24%;--y:42%;--w:220px" data-semester="S2" data-phase="Plan de experiencias" data-title="Semestre 2" data-copy="Traducci&oacute;n t&eacute;cnico-creativa de la experiencia; Integraci&oacute;n e interoperabilidad del sistema vivo; Responsabilidad situada e impacto; Materialidad expresiva en tiempo real; C&aacute;lculo Diferencial; Geometr&iacute;a anal&iacute;tica." data-credit="18 cr" data-output="6 componentes" data-progress="25">
+              <div class="sem-head"><span>S2</span><b>Semestre 2</b><small>18 cr</small></div>
               <div class="sem-nodes">
-                <div class="exp-node"><b>Traducci&oacute;n t&eacute;cnico-creativa</b><small>Criterios operativos de experiencia.</small></div>
-                <div class="exp-node"><b>Integraci&oacute;n e interoperabilidad</b><small>Primeras relaciones del sistema vivo.</small></div>
-                <div class="exp-node"><b>Responsabilidad situada e impacto</b><small>Criterio &eacute;tico y contextual.</small></div>
-                <div class="exp-node rt"><b>Materialidad expresiva en tiempo real</b><small>Imagen, sonido, movimiento y atm&oacute;sfera.</small></div>
+                <div class="exp-node"><b>Traducci&oacute;n t&eacute;cnico-creativa de la experiencia</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Integraci&oacute;n e interoperabilidad del sistema vivo</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Responsabilidad situada e impacto</b><small>3 cr.</small></div>
+                <div class="exp-node rt"><b>Materialidad expresiva en tiempo real</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>C&aacute;lculo Diferencial</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Geometr&iacute;a anal&iacute;tica</b><small>3 cr.</small></div>
               </div>
             </article>
-            <article class="semester foundation" style="--x:16%;--y:70%;--w:220px" data-semester="S3" data-phase="Fundamentaci&oacute;n profesional com&uacute;n" data-title="Arquitectura y Pruebas" data-copy="La evidencia aparece como motor de ajuste: el estudiante prueba calidad, organiza arquitectura y sustenta decisiones." data-credit="18 cr" data-output="Arquitectura verificable" data-progress="37.5">
-              <div class="sem-head"><span>S3</span><b>Arquitectura y Pruebas</b><small>Evidencia</small></div>
+            <article class="semester foundation" style="--x:16%;--y:70%;--w:220px" data-semester="S3" data-phase="Plan de experiencias" data-title="Semestre 3" data-copy="Prueba, evidencia y calidad de experiencia; Producci&oacute;n profesional y sustentaci&oacute;n; Arquitectura de sistemas interactivos en tiempo real; Computaci&oacute;n cient&iacute;fica e Inteligencia Artificial; C&aacute;lculo Integral; F&iacute;sica mec&aacute;nica." data-credit="18 cr" data-output="6 componentes" data-progress="37.5">
+              <div class="sem-head"><span>S3</span><b>Semestre 3</b><small>18 cr</small></div>
               <div class="sem-nodes">
-                <div class="exp-node"><b>Prueba, evidencia y calidad de experiencia</b><small>Evaluar para ajustar decisiones.</small></div>
-                <div class="exp-node"><b>Producci&oacute;n profesional y sustentaci&oacute;n</b><small>Documentar, comunicar y defender.</small></div>
-                <div class="exp-node rt"><b>Arquitectura de sistemas interactivos en tiempo real</b><small>Componentes, estados, motores y flujos.</small></div>
+                <div class="exp-node"><b>Prueba, evidencia y calidad de experiencia</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Producci&oacute;n profesional y sustentaci&oacute;n</b><small>3 cr.</small></div>
+                <div class="exp-node rt"><b>Arquitectura de sistemas interactivos en tiempo real</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Computaci&oacute;n cient&iacute;fica e Inteligencia Artificial</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>C&aacute;lculo Integral</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>F&iacute;sica mec&aacute;nica</b><small>3 cr.</small></div>
               </div>
             </article>
-            <article class="semester foundation" style="--x:41%;--y:78%;--w:225px" data-semester="S4" data-phase="Fundamentaci&oacute;n profesional com&uacute;n" data-title="Operar el sistema" data-copy="La fundamentaci&oacute;n cierra con proceduralidad, cuerpo, sensores, datos y condiciones de operaci&oacute;n." data-credit="17 cr" data-output="Sistema operable" data-progress="50">
-              <div class="sem-head"><span>S4</span><b>Operar el sistema</b><small>Integraci&oacute;n</small></div>
+            <article class="semester foundation" style="--x:41%;--y:78%;--w:225px" data-semester="S4" data-phase="Plan de experiencias" data-title="Semestre 4" data-copy="Proceduralidad visual, movimiento y efectos; Interacci&oacute;n situada, cuerpo, sensores y datos; Despliegue, operaci&oacute;n, optimizaci&oacute;n y evidencia; C&aacute;lculo Multivariado; &Aacute;lgebra lineal; Humanismo y cultura ciudadana." data-credit="17 cr" data-output="6 componentes" data-progress="50">
+              <div class="sem-head"><span>S4</span><b>Semestre 4</b><small>17 cr</small></div>
               <div class="sem-nodes">
-                <div class="exp-node rt"><b>Proceduralidad visual, movimiento y efectos</b><small>Materialidad generativa y comportamiento.</small></div>
-                <div class="exp-node"><b>Interacci&oacute;n situada, cuerpo, sensores y datos</b><small>Entrada, se&ntilde;al, contexto y respuesta.</small></div>
-                <div class="exp-node"><b>Despliegue, operaci&oacute;n, optimizaci&oacute;n y evidencia</b><small>Condiciones reales de funcionamiento.</small></div>
+                <div class="exp-node rt"><b>Proceduralidad visual, movimiento y efectos</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Interacci&oacute;n situada, cuerpo, sensores y datos</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Despliegue, operaci&oacute;n, optimizaci&oacute;n y evidencia</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>C&aacute;lculo Multivariado</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>&Aacute;lgebra lineal</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Humanismo y cultura ciudadana</b><small>2 cr.</small></div>
               </div>
             </article>
-            <article class="semester edi" style="--x:58%;--y:22%;--w:220px" data-semester="S5" data-phase="Territorios EDI" data-title="Primer territorio" data-copy="La capacidad com&uacute;n se tensiona con narrativa audiovisual en tiempo real y sistemas l&uacute;dicos digitales." data-credit="17 cr" data-output="Transferencia inicial" data-progress="62.5">
-              <div class="sem-head"><span>S5</span><b>Primer territorio</b><small>EDI</small></div>
+            <article class="semester edi" style="--x:58%;--y:22%;--w:220px" data-semester="S5" data-phase="Plan de experiencias" data-title="Semestre 5" data-copy="EDI 1: Narrativa audiovisual en tiempo real; EDI 2: Sistemas L&uacute;dicos Digitales; Proyectos de ingenier&iacute;a; Probabilidad y estad&iacute;stica; Ecuaciones diferenciales; Cristolog&iacute;a." data-credit="17 cr" data-output="6 componentes" data-progress="62.5">
+              <div class="sem-head"><span>S5</span><b>Semestre 5</b><small>17 cr</small></div>
               <div class="sem-nodes">
-                <div class="exp-node territory"><b>EDI 1: Narrativa audiovisual en tiempo real</b><small>Relato, imagen, sonido y ejecuci&oacute;n viva.</small></div>
-                <div class="exp-node territory"><b>EDI 2: Sistemas l&uacute;dicos digitales</b><small>Reglas, interacci&oacute;n, progreso y respuesta.</small></div>
+                <div class="exp-node territory"><b>EDI 1: Narrativa audiovisual en tiempo real</b><small>3 cr.</small></div>
+                <div class="exp-node territory"><b>EDI 2: Sistemas L&uacute;dicos Digitales</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Proyectos de ingenier&iacute;a</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Probabilidad y estad&iacute;stica</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Ecuaciones diferenciales</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Cristolog&iacute;a</b><small>2 cr.</small></div>
               </div>
             </article>
-            <article class="semester edi" style="--x:74%;--y:38%;--w:225px" data-semester="S6" data-phase="Territorios EDI" data-title="Sistemas sensibles" data-copy="S6 contiene EDI 3, EDI 4, Sistemas de control, Laboratorio de F&iacute;sica de Ondas, Flexible 1 y Flexible de humanismo 1." data-credit="17 cr" data-output="EDI 3 + EDI 4" data-progress="75">
-              <div class="sem-head"><span>S6</span><b>Sistemas sensibles</b><small>Transferencia</small></div>
+            <article class="semester edi" style="--x:74%;--y:38%;--w:225px" data-semester="S6" data-phase="Plan de experiencias" data-title="Semestre 6" data-copy="EDI 3: Cuerpo, interacci&oacute;n y sistemas sensibles; EDI 4: Sistemas Visuales Procedurales en Tiempo Real; Sistemas de control; Laboratorio de F&iacute;sica de Ondas: sonido y luz; Flexible de humanismo 1; Flexible 1." data-credit="17 cr" data-output="6 componentes" data-progress="75">
+              <div class="sem-head"><span>S6</span><b>Semestre 6</b><small>17 cr</small></div>
               <div class="sem-nodes">
-                <div class="exp-node territory"><b>EDI 3: Cuerpo, interacci&oacute;n y sistemas sensibles</b><small>Cuerpo, sensores, presencia y situaci&oacute;n.</small></div>
-                <div class="exp-node territory"><b>EDI 4: Sistemas visuales procedurales en tiempo real</b><small>Se&ntilde;al, control, visualidad y optimizaci&oacute;n.</small></div>
+                <div class="exp-node territory"><b>EDI 3: Cuerpo, interacci&oacute;n y sistemas sensibles</b><small>3 cr.</small></div>
+                <div class="exp-node territory"><b>EDI 4: Sistemas Visuales Procedurales en Tiempo Real</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Sistemas de control</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Laboratorio de F&iacute;sica de Ondas: sonido y luz</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Flexible de humanismo 1</b><small>2 cr.</small></div>
+                <div class="exp-node"><b>Flexible 1</b><small>3 cr.</small></div>
               </div>
             </article>
-            <article class="semester edi" style="--x:86%;--y:58%;--w:215px" data-semester="S7" data-phase="Territorios EDI y Capstone" data-title="EDI 5 y Capstone" data-copy="S7 contiene EDI 5, Capstone, Prepr&aacute;ctica, &Eacute;tica general, Emprendimiento y responsabilidad social, Flexible 2 y Flexible 3." data-credit="16 cr" data-output="Capstone en S7" data-progress="87.5">
-              <div class="sem-head"><span>S7</span><b>EDI 5 y Capstone</b><small>Cierre EDI</small></div>
+            <article class="semester edi" style="--x:86%;--y:58%;--w:215px" data-semester="S7" data-phase="Plan de experiencias" data-title="Semestre 7" data-copy="EDI 5: Sistemas inmersivos interactivos; Capstone; Prepr&aacute;ctica; &Eacute;tica general; Emprendimiento y responsabilidad social; Flexible 2; Flexible 3." data-credit="16 cr" data-output="7 componentes" data-progress="87.5">
+              <div class="sem-head"><span>S7</span><b>Semestre 7</b><small>16 cr</small></div>
               <div class="sem-nodes">
-                <div class="exp-node territory"><b>EDI 5: Sistemas inmersivos interactivos</b><small>Presencia, espacio, tecnolog&iacute;a y despliegue.</small></div>
-                <div class="exp-node gold"><b>Capstone</b><small>Ubicado en S7 en PlanDeExperiencias.</small></div>
-                <div class="exp-node"><b>Prepr&aacute;ctica</b><small>Componente de 1 cr&eacute;dito en S7.</small></div>
+                <div class="exp-node territory"><b>EDI 5: Sistemas inmersivos interactivos</b><small>3 cr.</small></div>
+                <div class="exp-node gold"><b>Capstone</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Prepr&aacute;ctica</b><small>1 cr.</small></div>
+                <div class="exp-node"><b>&Eacute;tica general</b><small>1 cr.</small></div>
+                <div class="exp-node"><b>Emprendimiento y responsabilidad social</b><small>2 cr.</small></div>
+                <div class="exp-node"><b>Flexible 2</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Flexible 3</b><small>3 cr.</small></div>
               </div>
             </article>
-            <article class="semester closing" style="--x:83%;--y:78%;--w:235px" data-semester="S8" data-phase="Cierre profesional e institucional" data-title="Pr&aacute;ctica, proyecto o emprendimiento" data-copy="S8 contiene Pr&aacute;ctica, proyecto o emprendimiento, &Eacute;tica profesional, Flexible de humanismo 2, Flexible 4 y Flexible 5. No contiene Capstone en el plan verificado." data-credit="17 cr" data-output="Pr&aacute;ctica/proyecto/emprendimiento" data-progress="100">
-              <div class="sem-head"><span>S8</span><b>Pr&aacute;ctica</b><small>Cierre</small></div>
+            <article class="semester closing" style="--x:83%;--y:78%;--w:235px" data-semester="S8" data-phase="Plan de experiencias" data-title="Semestre 8" data-copy="Pr&aacute;ctica, proyecto o emprendimiento; &Eacute;tica profesional; Flexible de humanismo 2; Flexible 4; Flexible 5." data-credit="17 cr" data-output="5 componentes" data-progress="100">
+              <div class="sem-head"><span>S8</span><b>Semestre 8</b><small>17 cr</small></div>
               <div class="sem-nodes">
-                <div class="exp-node gold"><b>Pr&aacute;ctica, proyecto o emprendimiento</b><small>9 cr&eacute;ditos en S8.</small></div>
-                <div class="exp-node"><b>&Eacute;tica profesional</b><small>1 cr&eacute;dito en S8.</small></div>
-                <div class="exp-node"><b>Flexible de humanismo 2</b><small>2 cr&eacute;ditos en S8.</small></div>
-                <div class="exp-node"><b>Flexible 4 y Flexible 5</b><small>5 cr&eacute;ditos flexibles en S8.</small></div>
+                <div class="exp-node gold"><b>Pr&aacute;ctica, proyecto o emprendimiento</b><small>9 cr.</small></div>
+                <div class="exp-node"><b>&Eacute;tica profesional</b><small>1 cr.</small></div>
+                <div class="exp-node"><b>Flexible de humanismo 2</b><small>2 cr.</small></div>
+                <div class="exp-node"><b>Flexible 4</b><small>3 cr.</small></div>
+                <div class="exp-node"><b>Flexible 5</b><small>2 cr.</small></div>
               </div>
             </article>
           </div>
@@ -1654,8 +1635,8 @@
           <div class="trace-intro">
             <div class="trace-principle">
               <div>
-                <div class="mini-label">Matriz viva</div>
-                <h3>De intenci&oacute;n curricular a evidencia verificable</h3>
+                <div class="mini-label">Trazabilidad curricular</div>
+                <h3>De intenci&oacute;n curricular a evidencia evaluable</h3>
               </div>
               <div class="trace-checks" aria-label="Criterios de trazabilidad">
                 <div class="trace-check"><span>01</span><b>Desempe&ntilde;o observable antes que tema declarado</b></div>
@@ -1673,7 +1654,7 @@
             <div class="trace-box"><span>01</span><b>PI</b><small>Resultado o indicador que orienta la lectura.</small></div>
             <div class="trace-box"><span>02</span><b>Pregunta situada</b><small>Interrogante que vuelve operable el desempe&ntilde;o.</small></div>
             <div class="trace-box"><span>03</span><b>Funci&oacute;n dominante</b><small>Capacidad profesional que organiza la experiencia.</small></div>
-            <div class="trace-box"><span>04</span><b>Evidencia</b><small>Producto, prueba o registro que permite verificar.</small></div>
+            <div class="trace-box"><span>04</span><b>Evidencia</b><small>Producto, prueba o registro que sustenta la decisi&oacute;n curricular.</small></div>
             <div class="trace-box"><span>05</span><b>Experiencia</b><small>Actividad donde el estudiante integra y decide.</small></div>
             <div class="trace-box gold"><span>06</span><b>I / D / M / M*</b><small>Nivel de madurez asignado con criterio program&aacute;tico.</small></div>
           </div>
@@ -1707,32 +1688,14 @@
         credit: document.getElementById("live-credit"),
         output: document.getElementById("live-output"),
       };
-      const runtimeSteps = [...document.querySelectorAll(".runtime-step")];
       const semesters = [...score.querySelectorAll(".semester")];
-
-      function activeRuntimeIndex(semesterId, node) {
-        if (node?.classList.contains("gold")) return 3;
-        if (node?.classList.contains("territory")) return 2;
-        if (node?.classList.contains("rt")) return 1;
-        const index = Number(String(semesterId).replace("S", ""));
-        if (index >= 8) return 3;
-        if (index >= 5) return 2;
-        if (index >= 3) return 1;
-        return 0;
-      }
-
-      function setLiveRuntime(index) {
-        runtimeSteps.forEach((step, i) => {
-          step.classList.toggle("is-live", i === index);
-        });
-      }
 
       function activateSemester(semester, node = null) {
         const nodeTitle = node?.querySelector("b")?.textContent?.trim();
         const nodeCopy = node?.querySelector("small")?.textContent?.trim();
         const title = nodeTitle || semester.dataset.title;
         const copy = nodeCopy
-          ? `${nodeCopy} Esta experiencia se lee dentro de ${semester.dataset.title.toLowerCase()}.`
+          ? `${semester.dataset.semester}. Créditos: ${nodeCopy.replace(".", "")}.`
           : semester.dataset.copy;
 
         semesters.forEach(item => {
@@ -1746,10 +1709,9 @@
         live.phase.textContent = semester.dataset.phase;
         live.title.textContent = `${semester.dataset.semester} \u00b7 ${title}`;
         live.copy.textContent = copy;
-        live.credit.textContent = semester.dataset.credit;
-        live.output.textContent = nodeTitle ? "Experiencia activa" : semester.dataset.output;
+        live.credit.textContent = nodeCopy ? nodeCopy.replace(".", "") : semester.dataset.credit;
+        live.output.textContent = nodeTitle ? "Componente seleccionado" : semester.dataset.output;
         live.fill.style.width = `${semester.dataset.progress}%`;
-        setLiveRuntime(activeRuntimeIndex(semester.dataset.semester, node));
       }
 
       semesters.forEach(semester => {
