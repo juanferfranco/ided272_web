@@ -199,7 +199,10 @@
     .problem-sentence{margin:0;padding:18px 20px;border-left:5px solid var(--gold);border-radius:0 18px 18px 0;background:#fffaf0;color:#7a5500;font-weight:900;font-size:clamp(1.15rem,2vw,1.6rem);line-height:1.18;letter-spacing:-.035em}
     .problem-panel p:not(.problem-sentence){margin:0;color:var(--muted);font-size:1.02rem}
     .profile-chain{margin-top:22px;padding:26px}
-    .chain-title{margin:0 0 18px;color:var(--navy);font-size:1.22rem;font-weight:900;letter-spacing:-.025em}
+    .chain-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:0 0 18px}
+    .chain-title{margin:0;color:var(--navy);font-size:1.22rem;font-weight:900;letter-spacing:-.025em}
+    .chain-direction{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.82rem;font-weight:850;text-align:right}
+    .chain-direction::before{content:"";width:10px;height:10px;border-radius:999px;background:var(--teal);box-shadow:0 0 0 4px rgba(0,150,162,.12)}
     .causal-flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:stretch}
     .causal-step{
       position:relative;
@@ -220,6 +223,45 @@
     .causal-step.capstone{background:#fffaf0;border-color:rgba(200,148,19,.42)}
     .causal-step.capstone span{background:var(--gold)}
     .causal-step.capstone b{color:#8a6200}
+    .chain-return{
+      position:relative;
+      margin-top:18px;
+      padding:13px 18px 13px 58px;
+      border-radius:16px;
+      border:1px solid rgba(200,148,19,.28);
+      background:linear-gradient(90deg,#fffaf0,#f4fbfc);
+      color:var(--navy);
+      display:flex;
+      align-items:center;
+      gap:10px;
+      overflow:hidden;
+    }
+    .chain-return::before{
+      content:"\2190";
+      position:absolute;
+      left:18px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--gold);
+      font-size:1.65rem;
+      font-weight:950;
+      line-height:1;
+      z-index:1;
+    }
+    .chain-return::after{
+      content:"";
+      position:absolute;
+      left:18px;
+      right:18px;
+      top:50%;
+      height:2px;
+      background:linear-gradient(90deg,rgba(200,148,19,.44),rgba(0,150,162,.1));
+      transform:translateY(-50%);
+      z-index:0;
+    }
+    .chain-return b,.chain-return small{position:relative;z-index:2;background:linear-gradient(90deg,#fffaf0,#f7fbfc)}
+    .chain-return b{padding-left:6px;font-size:.95rem}
+    .chain-return small{color:var(--muted);font-weight:760;line-height:1.25}
 
     .realtime-system{display:grid;grid-template-columns:minmax(280px,.95fr) minmax(0,1.05fr);gap:22px;align-items:stretch}
     .realtime-principle{
@@ -1144,9 +1186,15 @@
       .profile-grid,.realtime-system,.change-panels,.change-insights,.scope-system,.importance-grid,.functions-system,.iceberg-card,.capstone-panel,.score-hero,.score-live,.score-ground,.trace-intro{grid-template-columns:1fr}
       .realtime-principle{min-height:auto}
       .realtime-criteria{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .chain-head{display:grid;gap:10px}
+      .chain-direction{text-align:left;justify-content:start}
       .causal-flow{grid-template-columns:1fr;gap:28px}
       .causal-step{min-height:auto}
       .causal-step:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-25px;transform:translateX(-50%)}
+      .chain-return{display:grid;gap:5px;padding:16px 18px 16px 54px}
+      .chain-return::before{content:"\21ba";top:19px;transform:none}
+      .chain-return::after{left:28px;right:auto;top:20px;bottom:20px;width:2px;height:auto;background:linear-gradient(180deg,rgba(200,148,19,.42),rgba(0,150,162,.12));transform:none}
+      .chain-return b,.chain-return small{background:transparent}
       .capstone-proof{grid-template-columns:1fr}
       .change-bridge{min-height:auto;display:flex;justify-content:center}
       .bridge-note{writing-mode:horizontal-tb;transform:none}
@@ -1243,13 +1291,6 @@
             <div class="mini-label">Perfil de egreso</div>
             <h3>Un ingeniero en diseño que conduce la materialización de experiencias digitales.</h3>
             <p>Convierte una intención de experiencia en un sistema computacional interactivo en tiempo real, funcional, integrado, evaluable, responsable y desplegable.</p>
-            <div class="profile-tags" aria-label="Capacidades diferenciales">
-              <span>criterio técnico-creativo</span>
-              <span>integración</span>
-              <span>prueba</span>
-              <span>despliegue</span>
-              <span>sustentación</span>
-            </div>
           </article>
           <article class="card problem-panel">
             <div class="mini-label">Problema profesional central</div>
@@ -1257,14 +1298,21 @@
             <p>Esta frase ordena el rediseño: define qué debe aprender a hacer el estudiante, qué evidencias importan y por qué las experiencias de aprendizaje se organizan como una trayectoria.</p>
           </article>
         </div>
-        <div class="card profile-chain" aria-label="Cadena causal del rediseño curricular">
-          <h3 class="chain-title">Cadena de diseño curricular</h3>
+        <div class="card profile-chain" aria-label="Cadena iterativa del rediseño curricular">
+          <div class="chain-head">
+            <h3 class="chain-title">Cadena iterativa de dise&ntilde;o curricular</h3>
+            <div class="chain-direction">Dise&ntilde;o y derivaci&oacute;n curricular</div>
+          </div>
           <div class="causal-flow">
             <div class="causal-step"><span>01</span><b>Perfil</b><em>Define el objeto profesional y la responsabilidad diferencial del egresado.</em></div>
             <div class="causal-step"><span>02</span><b>Problema central</b><em>Convierte el perfil en una transformación que el estudiante debe aprender a conducir.</em></div>
             <div class="causal-step"><span>03</span><b>Mapa</b><em>Ordena la ruta desde necesidad, reto u oportunidad hasta despliegue y sustentación.</em></div>
             <div class="causal-step"><span>04</span><b>Funciones y evidencias</b><em>Explican qué capacidades se forman y cómo se observan.</em></div>
             <div class="causal-step capstone"><span>05</span><b>MED</b><em>Mayor experiencia de diseño.</em></div>
+          </div>
+          <div class="chain-return" aria-label="Validación y ajuste desde MED hacia perfil">
+            <b>Validaci&oacute;n y ajuste</b>
+            <small>Desde la MED y sus evidencias se recalibran perfil, problema, mapa y funciones hasta encontrar balance.</small>
           </div>
         </div>
       </div>
